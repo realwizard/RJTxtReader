@@ -87,15 +87,15 @@
         {
             if ([element isKindOfClass:[CXMLElement class]])
             {
-                CXMLNode* nameNode = [element nodeForXPath:@"//name" error:nil];
+                CXMLNode* nameNode = [[element children] objectAtIndex:1];
                 [name addObject: [nameNode stringValue]];
                 NSLog(@"%@",[nameNode stringValue]);
                 
-                CXMLNode* iconNode = [element nodeForXPath:@"//icon" error:nil];
+                CXMLNode* iconNode = [[element children] objectAtIndex:3];
                 [icon addObject: [iconNode stringValue]];
                 NSLog(@"%@",[iconNode stringValue]);
                 
-                CXMLNode* urlNode = [element nodeForXPath:@"//url" error:nil];
+                CXMLNode* urlNode = [[element children] objectAtIndex:5];
                 [url addObject: [urlNode stringValue]];
                 NSLog(@"%@",[urlNode stringValue]);
             }
